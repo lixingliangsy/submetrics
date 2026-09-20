@@ -1,0 +1,9 @@
+import fs from 'fs'
+import path from 'path'
+
+export function audit(event: string, meta: Record<string, unknown> = {}) {
+  const dir = path.join(process.cwd(), '.data', 'audit')
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true })
+  const line = { ts: new Date().toISOString(), event, ...meta }
+  fs.appendFileSync(path.join(dir, 'audit.jsonl'), JSON.stringify(line) + '\n', 'utf8')
+}

@@ -1,0 +1,103 @@
+{
+  "version": "mrr@2026-07-24",
+  "standard": "Subscription / SaaS recurring-revenue metrics (MRR & ARR corpus)",
+  "source": "ChartMogul / OpenView / SaaS Capital / SaaS metrics references (web-researched 2026-07-24)",
+  "entries": [
+    {
+      "id": "mrr-def",
+      "title": "Monthly Recurring Revenue (MRR) — normalized monthly subscription revenue",
+      "body": "MRR is the normalized, amortized monthly revenue from all active recurring subscriptions. It is the central financial signal for a SaaS business because it strips out one-time fees, professional services, and usage overages. Formula: sum of active recurring subscription revenue for the month.",
+      "ref": "https://chartmogul.com/saas-metrics/",
+      "tags": ["mrr", "recurring revenue", "definition"],
+      "verify": true
+    },
+    {
+      "id": "mrr-normalize",
+      "title": "Normalize annual/upfront payments to MRR (ACV ÷ 12)",
+      "body": "For annual or multi-month contracts, MRR = Annual Contract Value ÷ number of months, NOT the full cash received upfront. A customer paying $1,200/year contributes $100/month. Counting the full cash amount in the month received is the most common early-stage MRR accounting error.",
+      "ref": "https://chartmogul.helpscoutdocs.com/article/166-subscription-analytics-glossary",
+      "tags": ["mrr", "normalization", "cash vs mrr"],
+      "verify": true
+    },
+    {
+      "id": "mrr-movements",
+      "title": "MRR movements — New, Expansion, Contraction, Churned",
+      "body": "Decompose MRR into four vectors: New (new customers), Expansion (upgrades/seat adds), Contraction (downgrades), Churned (cancellations). Net New MRR = New + Expansion − Contraction − Churned. Tracking the four separately reveals which part of the revenue engine is healthy.",
+      "ref": "https://chartmogul.com/saas-metrics/",
+      "tags": ["mrr", "waterfall", "movements", "expansion", "churn"],
+      "verify": true
+    },
+    {
+      "id": "arr-def",
+      "title": "Annual Recurring Revenue (ARR) = MRR × 12",
+      "body": "ARR is the annualized run-rate of recurring revenue. It is mainly useful for high-level growth tracking, investor reporting, and benchmarking. It is a point-in-time snapshot, not trailing revenue — GAAP revenue may lag or exceed ARR depending on signing timing.",
+      "ref": "https://chartmogul.helpscoutdocs.com/article/166-subscription-analytics-glossary",
+      "tags": ["arr", "run rate", "definition"],
+      "verify": true
+    },
+    {
+      "id": "arr-valuation",
+      "title": "ARR as the primary SaaS valuation basis",
+      "body": "ARR (and its growth rate) is the metric VCs and public indices use to compare SaaS companies and set valuation multiples. Below ~$1M ARR, MRR is more practical; at $1M+ ARR, ARR becomes the standard language for fundraising and board reporting.",
+      "ref": "https://www.bessemerventures.com/state-of-the-cloud/",
+      "tags": ["arr", "valuation", "multiple", "bessemer"],
+      "verify": true
+    },
+    {
+      "id": "mrr-vs-arr",
+      "title": "Use MRR for week-to-week ops, ARR for trend/benchmarking",
+      "body": "ARR is slow to react because it is derived from MRR (12× the latest month). Most operating decisions should use MRR; ARR is best for year-over-year comparison and investor narrative. Never present ARR alone without churn and net retention context.",
+      "ref": "https://blog.nonoisemetrics.com/saas-acronyms-cheat-sheet-no-googling",
+      "tags": ["mrr", "arr", "operating model"],
+      "verify": true
+    },
+    {
+      "id": "arpu-def",
+      "title": "ARPU / ARPA — Average Revenue Per User/Account",
+      "body": "ARPU = MRR ÷ active paying users. For B2B where customers are companies, ARPA (Average Revenue Per Account) = MRR ÷ active paying accounts is the more meaningful figure and feeds LTV calculations.",
+      "ref": "https://blog.nonoisemetrics.com/saas-acronyms-cheat-sheet-no-googling",
+      "tags": ["arpu", "arpa", "average revenue"],
+      "verify": true
+    },
+    {
+      "id": "acv-def",
+      "title": "ACV — Average Annual Contract Value (excludes one-time fees)",
+      "body": "ACV is the average annual value of a customer contract, excluding setup or one-time fees. Rising ACV signals upmarket movement; declining ACV may signal competitive pricing pressure or a deliberate move to smaller customers.",
+      "ref": "https://www.equity-rank.com/blog/saas-metrics-explained",
+      "tags": ["acv", "contract value", "upmarket"],
+      "verify": true
+    },
+    {
+      "id": "cmrr-def",
+      "title": "CMRR — Committed MRR (forward projection)",
+      "body": "Committed MRR projects MRR into the future from expected or scheduled subscription changes (e.g. a communicated upcoming cancellation). It is a planning signal, not a guaranteed run-rate.",
+      "ref": "https://chartmogul.helpscoutdocs.com/article/166-subscription-analytics-glossary",
+      "tags": ["cmrr", "committed", "forecast"],
+      "verify": true
+    },
+    {
+      "id": "mrr-mistake",
+      "title": "Common MRR mistake — treating annual cash as in-period revenue",
+      "body": "Confusing cash received with MRR inflates numbers in strong acquisition months and hides the underlying trend. MRR must include only recurring subscription revenue, never one-time setup fees, services, or usage overages.",
+      "ref": "https://www.clarigital.com/codex/business-strategy/saas-metrics-kpis",
+      "tags": ["mrr", "mistake", "cash vs mrr"],
+      "verify": true
+    },
+    {
+      "id": "negative-churn",
+      "title": "Negative net churn — expansion exceeds churn (the 'holy grail')",
+      "body": "When expansion + reactivation MRR exceeds churned + contraction MRR, the revenue base grows even with zero new customers. This is the most capital-efficient growth model in SaaS and the strongest durability signal.",
+      "ref": "https://chartmogul.com/resources/saas-metrics-cheat-sheet",
+      "tags": ["negative churn", "expansion", "retention"],
+      "verify": true
+    },
+    {
+      "id": "mrr-growth-benchmark",
+      "title": "MRR growth-rate benchmarks by stage",
+      "body": "SaaS Capital 2025 survey: median private B2B SaaS growth ~25% (down from 30% in 2023). Early-stage (Series A–B) often 30–50% annual ARR growth; growth-stage ($20–100M ARR) 20–40%; public/late-stage 15–25%. Use as reference, not a promise.",
+      "ref": "https://www.saas-capital.com/research/",
+      "tags": ["mrr", "growth", "benchmark", "saas capital"],
+      "verify": true
+    }
+  ]
+}

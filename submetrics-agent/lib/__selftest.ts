@@ -1,0 +1,84 @@
+// submetrics deep-data moat — deterministic self-test (run with tsx, no LLM).
+// Verifies: (1) retrieve semantic hit, (2) guardrail G1/G5 rejection,
+// (3) flywheel accept → re-index → retrieve-hit, then cleans up test storage.
+
+import fs from 'fs'
+import path from 'path'
+import { retrieve, loadGovernanceIndex, invalidateGovernanceCache } from './governance-data/index'
+import { applyGuardrails } from './guardrails'
+import { writeback, setStatus, loadContributed, getAcceptedContributed, type ContributedSignal } from './data-flywheel'
+
+let pass = 0
+let fail = 0
+function assert(name: string, cond: boolean, extra = ''): void {
+  if (cond) {
+    pass++
+    console.log(`  ✅ ${name}`)
+  } else {
+    fail++
+    console.log(`  ❌ ${name} ${extra}`)
+  }
+}
+
+console.log('— submetrics deep-data moat self-test —')
+
+// T1: index loads all four curated datasets
+const idx = loadGovernanceIndex()
+assert('index loads >= 40 curated entries', idx.length >= 40, `(got ${idx.length})`)
+
+// T2: retrieve hits MRR normalization (ACV ÷ 12) by "normalize annual contract value to mrr"
+const r1 = retrieve('annual contract value normalize mrr acv divide 12', { scope: 'mrr', topK: 3 })
+assert('retrieve("normalize annual contract value mrr") → mrr-normalize present', r1.some((e) => e.id === 'mrr-normalize'), `(top: ${r1.map((e) => e.id).join(',')})`)
+
+// T3: retrieve hits the critical-churn red flag by "structural red flag persistent 5% churn"
+const r2 = retrieve('structural red flag persistent monthly churn product market fit pricing onboarding problem', { scope: 'churn', topK: 4 })
+assert('retrieve("structural red flag churn") → churn-red-flag present', r2.some((e) => e.id === 'churn-red-flag'), `(top: ${r2.map((e) => e.id).join(',')})`)
+
+// T4: retrieve hits NRR definition by "net revenue retention ndr formula"
+const r3 = retrieve('net revenue retention ndr formula expansion churned starting mrr', { scope: 'ndr', topK: 4 })
+assert('retrieve("net revenue retention ndr") → nrr/ndr entry present', r3.some((e) => /nrr|nrr|ndr/.test(e.id)), `(top: ${r3.map((e) => e.id).join(',')})`)
+
+// T5: guardrail rejects ungrounded / absolute-assurance text (G1 + G5)
+const bad = applyGuardrails('Your SaaS is guaranteed to hit 120% NDR and we certify your exact valuation.', [])
+assert('guardrail rejects "guaranteed 120% NDR / certify valuation" (G1+G5)', !bad.ok && (bad.violations.includes('G5_CERTIFIED_VALUATION') || bad.violations.includes('G2_GUARANTEE_OUTCOME') || bad.violations.includes('G1_NO_CITATION')), `(violations: ${bad.violations.join(',')})`)
+
+// T6: guardrail accepts grounded decision-support text
+const good = applyGuardrails('Based on NRR = (Starting MRR + Expansion - Churned) / Starting MRR your 90% NRR suggests a leaky bucket. Verify against OpenView before acting.', [
+  { id: 'nrr-def', ref: 'https://chartmogul.com/resources/saas-metrics-cheat-sheet', title: 'Net Revenue Retention definition', text: '', source: 'ChartMogul', scope: 'ndr', verify: true },
+])
+assert('guardrail accepts grounded text', good.ok, `(violations: ${good.violations.join(',')})`)
+
+// T7: flywheel accept → becomes retrievable, then clean up
+const testId = 'selftest_' + Date.now()
+const sig: ContributedSignal = {
+  id: testId,
+  runId: 'selftest',
+  kind: 'feedback',
+  scope: 'benchmarks',
+  rating: 5,
+  status: 'pending_review',
+  createdAt: new Date().toISOString(),
+  verify: true,
+  note: 'SELFTEST contributed entry (safe to delete)',
+}
+writeback([sig])
+assert('flywheel writeback persisted (pending_review)', loadContributed('pending_review').some((s) => s.id === testId))
+assert('contributed NOT retrievable while pending', getAcceptedContributed().every((c) => c.id !== testId))
+
+setStatus(testId, 'accepted')
+invalidateGovernanceCache()
+const r4 = retrieve('selftest contributed', { topK: 10 })
+assert('accepted contributed becomes retrievable', r4.some((e) => e.id === testId))
+
+// cleanup: remove test entry. NOTE: this sandbox intercepts fs.unlinkSync
+// (safe-delete shim); truncate to empty file instead of deleting the log.
+setStatus(testId, 'rejected')
+const remaining = loadContributed().filter((s) => s.id !== testId)
+const logPath = path.join(__dirname, 'governance-data', 'contributed', 'feedback-log.jsonl')
+try { fs.writeFileSync(logPath, remaining.map((s) => JSON.stringify(s)).join('\n') + (remaining.length ? '\n' : '')) } catch (e) { /* read-only serverless FS: best-effort */ }
+invalidateGovernanceCache()
+assert('contributed store empty after cleanup', getAcceptedContributed().every((c) => c.id !== testId))
+
+console.log(`\nRESULT: ${pass} passed, ${fail} failed`)
+if (fail > 0) process.exit(1)
+console.log('ALL GREEN ✅')

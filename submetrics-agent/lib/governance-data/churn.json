@@ -1,0 +1,103 @@
+{
+  "version": "churn@2026-07-24",
+  "standard": "Subscription / SaaS churn & retention metrics corpus",
+  "source": "OpenView / ChartMogul / SaaS Capital references (web-researched 2026-07-24)",
+  "entries": [
+    {
+      "id": "logo-churn",
+      "title": "Logo (customer) churn rate",
+      "body": "Logo churn = number of customers who cancelled ÷ total customers at start of period. Measures how many customers leave regardless of size. Most relevant for SMB-focused SaaS where each customer is a similar revenue slice.",
+      "ref": "https://openviewpartners.com/blog/what-are-key-performance-indicators-6-saas-metrics-that-really-matter",
+      "tags": ["churn", "logo churn", "customer churn", "definition"],
+      "verify": true
+    },
+    {
+      "id": "revenue-churn",
+      "title": "Revenue (MRR/dollar) churn rate",
+      "body": "Revenue churn = MRR lost from cancellations and downgrades ÷ total MRR at start of period. Weighted by customer size. A few large churners show low logo churn but high revenue churn — the two must be tracked separately.",
+      "ref": "https://openviewpartners.com/blog/what-are-key-performance-indicators-6-saas-metrics-that-really-matter",
+      "tags": ["churn", "revenue churn", "mrr churn", "definition"],
+      "verify": true
+    },
+    {
+      "id": "churn-benchmark-monthly",
+      "title": "Monthly churn benchmarks — industry context",
+      "body": "Under 1%/month is excellent; 1–2% good; 2–5% concerning for most models; above 5%/month is critical — at 5% monthly, half the customer base turns over in ~14 months, making sustainable growth very difficult.",
+      "ref": "https://www.clarigital.com/codex/business-strategy/saas-metrics-kpis",
+      "tags": ["churn", "benchmark", "monthly churn"],
+      "verify": true
+    },
+    {
+      "id": "churn-benchmark-chartmogul",
+      "title": "Churn benchmarks by ARR stage (ChartMogul)",
+      "body": "Median early-stage SaaS: 6.2% net MRR churn / 4.1% gross. Over $1M ARR: 2.3% net / 5.3% gross. Over $15M ARR: 1.8% net / 5.8% gross. Churn compresses as companies find product-market fit and sharpen their customer category.",
+      "ref": "https://chartmogul.com/resources/saas-metrics-cheat-sheet",
+      "tags": ["churn", "benchmark", "chartmogul", "arr stage"],
+      "verify": true
+    },
+    {
+      "id": "gross-vs-net-churn",
+      "title": "Gross vs net churn — net includes expansion",
+      "body": "Net churn subtracts expansion revenue; gross churn does not. A business can show low gross churn but high net churn if expansion is masking leakage, or vice versa. Always report both to read true retention quality.",
+      "ref": "https://www.equity-rank.com/blog/saas-metrics-explained",
+      "tags": ["churn", "gross churn", "net churn", "expansion"],
+      "verify": true
+    },
+    {
+      "id": "churn-first-90-days",
+      "title": "30–50% of total churn happens in first 90 days",
+      "body": "Most churn occurs before the customer reaches their 'aha moment'. Onboarding is the highest-leverage churn intervention: improve activation and the first-90-day experience to cut lifetime churn materially.",
+      "ref": "https://amworldgroup.com/statistics/recurring-revenue-statistics",
+      "tags": ["churn", "onboarding", "activation", "retention"],
+      "verify": true
+    },
+    {
+      "id": "involuntary-churn",
+      "title": "Involuntary churn — ~11% revenue lost to payment failures",
+      "body": "About 11% of subscription revenue is lost annually to involuntary churn (expired cards, insufficient funds, fraud blocks). Smart-retry / dunning systems recover roughly 70% of these failures — a high-ROI retention lever often overlooked.",
+      "ref": "https://amworldgroup.com/statistics/recurring-revenue-statistics",
+      "tags": ["churn", "involuntary churn", "dunning", "payments"],
+      "verify": true
+    },
+    {
+      "id": "churn-cohort",
+      "title": "Track churn on monthly cohort basis",
+      "body": "Monitor logo and revenue churn on a monthly cohort (or weekly at high volume) basis rather than a single annual number. Cohort curves reveal whether retention is improving and where in the lifecycle leakage concentrates.",
+      "ref": "https://openviewpartners.com/blog/what-are-key-performance-indicators-6-saas-metrics-that-really-matter",
+      "tags": ["churn", "cohort", "retention"],
+      "verify": true
+    },
+    {
+      "id": "churn-upmarket-ok",
+      "title": "High logo churn + low revenue churn may be acceptable when upmarket",
+      "body": "If small customers churn while larger accounts stay and grow, logo churn can be high but revenue churn low. This is acceptable when the strategy is deliberately moving upmarket — but only if revenue retention holds.",
+      "ref": "https://www.clarigital.com/codex/business-strategy/saas-metrics-kpis",
+      "tags": ["churn", "logo churn", "upmarket", "revenue churn"],
+      "verify": true
+    },
+    {
+      "id": "churn-red-flag",
+      "title": "Churn > 5%/month is a structural red flag",
+      "body": "At 5% monthly churn the base halves in ~14 months; acquisition must run constantly just to stand still. Persistent >5% monthly churn usually signals a product-market-fit, pricing, or onboarding problem, not a sales problem.",
+      "ref": "https://www.clarigital.com/codex/business-strategy/saas-metrics-kpis",
+      "tags": ["churn", "red flag", "benchmark"],
+      "verify": true
+    },
+    {
+      "id": "saas-quick-ratio",
+      "title": "SaaS Quick Ratio — (New + Expansion) ÷ (Churned + Contraction)",
+      "body": "A ratio above 4 indicates healthy growth efficiency (for every $1 of lost MRR, more than $4 is added). Below 2 suggests the business is treading water. It is a cleaner health signal than top-line growth alone.",
+      "ref": "https://www.equity-rank.com/blog/saas-metrics-explained",
+      "tags": ["quick ratio", "efficiency", "growth", "churn"],
+      "verify": true
+    },
+    {
+      "id": "churn-formula-strict",
+      "title": "Strict revenue-churn formula",
+      "body": "Monthly revenue churn rate = (MRR lost to downgrades + cancellations during the month) ÷ MRR at start of month × 100. Exclude expansion from the numerator; expansion belongs in net-retention, not churn.",
+      "ref": "https://openviewpartners.com/blog/what-are-key-performance-indicators-6-saas-metrics-that-really-matter",
+      "tags": ["churn", "formula", "revenue churn"],
+      "verify": true
+    }
+  ]
+}

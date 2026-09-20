@@ -1,0 +1,103 @@
+{
+  "version": "ndr@2026-07-24",
+  "standard": "Subscription / SaaS net & gross revenue retention corpus",
+  "source": "ChartMogul / OpenView / Stripe / KeyBanc / SaaS Capital references (web-researched 2026-07-24)",
+  "entries": [
+    {
+      "id": "nrr-def",
+      "title": "Net Revenue Retention (NRR) / Net Dollar Retention (NDR) — definition",
+      "body": "NRR (also called NDR or Net Dollar Retention) = (Starting MRR + Expansion − Contraction − Churned) ÷ Starting MRR × 100. It measures how existing customers' revenue compounds after expansion, contraction, and churn. Above 100% means the base grows with zero new logos.",
+      "ref": "https://chartmogul.com/resources/saas-metrics-cheat-sheet",
+      "tags": ["nrr", "ndr", "net revenue retention", "definition"],
+      "verify": true
+    },
+    {
+      "id": "ndr-identity",
+      "title": "NDR and NRR are the same concept",
+      "body": "Net Dollar Retention (NDR) and Net Revenue Retention (NRR) are interchangeable labels for the same metric. Do not mistake logo/customer retention (count-based) for NRR (revenue-based) — retaining 90% of customers can coexist with weak NRR if top accounts leave.",
+      "ref": "https://openviewpartners.com/blog/what-are-key-performance-indicators-6-saas-metrics-that-really-matter",
+      "tags": ["ndr", "nrr", "definition", "vs logo retention"],
+      "verify": true
+    },
+    {
+      "id": "nrr-good",
+      "title": "NRR benchmarks — what 'good' looks like",
+      "body": "NRR above 120% is excellent (best-in-class enterprise SaaS); 100–120% is strong; 90–100% is adequate but means new-customer growth is required to grow overall; below 90% signals a retention problem. Best-in-class often 120–150%.",
+      "ref": "https://www.clarigital.com/codex/business-strategy/saas-metrics-kpis",
+      "tags": ["nrr", "benchmark", "net revenue retention"],
+      "verify": true
+    },
+    {
+      "id": "nrr-benchmark-chartmogul",
+      "title": "NRR percentiles by ARR band (ChartMogul SaaS Retention Report)",
+      "body": "Median NRR by ARR band: <$300K → 57.6%; $300K–$1M → 70.2%; $1–3M → 77.9%; $3–8M → 82.1%; $8–15M → 81.3%; $15–30M → 93.4%. B2B SaaS should target >100%; crossing 100% typically happens around $15M+ ARR.",
+      "ref": "https://chartmogul.com/resources/saas-metrics-cheat-sheet",
+      "tags": ["nrr", "benchmark", "percentile", "chartmogul"],
+      "verify": true
+    },
+    {
+      "id": "grr-def",
+      "title": "Gross Revenue Retention (GRR) — capped at 100%",
+      "body": "GRR = (Starting MRR − Contraction − Churned) ÷ Starting MRR × 100. It excludes expansion, so it is capped at 100% and isolates pure leakage. If GRR is low, expansion may be masking a real churn problem.",
+      "ref": "https://chartmogul.com/saas-metrics/",
+      "tags": ["grr", "gross revenue retention", "definition"],
+      "verify": true
+    },
+    {
+      "id": "grr-benchmark",
+      "title": "GRR benchmark — ~90% median, 92%+ strong",
+      "body": "Median GRR ~90% (KeyBanc 2024); 92%+ is strong and 95%+ top-tier. GRR below 90% with healthy NRR means expansion is doing heavy lifting to compensate for leakage — fragile durability.",
+      "ref": "https://founderpath.com/blog/saas-financial-model",
+      "tags": ["grr", "benchmark", "keybanc", "gross retention"],
+      "verify": true
+    },
+    {
+      "id": "ndr-benchmark-agg",
+      "title": "2026 NDR / GRR benchmarks (OpenView, Bessemer, KeyBanc, SaaS Capital)",
+      "body": "Aggregated 2024–2026 surveys: median NDR ~101% (KeyBanc 2024), 100% across B2B SaaS; best-in-class exceeds 110%, top-decile 120%+. GRR median ~90%. Usage-based pricing averages ~133% NRR vs ~110% seat-based. Reference ranges, not guarantees.",
+      "ref": "https://saascalchub.com/guides/2026-saas-industry-benchmarks",
+      "tags": ["ndr", "grr", "benchmark", "aggregate", "keybanc", "bessemer"],
+      "verify": true
+    },
+    {
+      "id": "ndr-leaky-bucket",
+      "title": "NDR < 100% = 'leaky bucket'",
+      "body": "OpenView: an NDR below 100% means you are acquiring customers (costly) merely to disguise churn and hold top-line growth — inefficient, backfires eventually. NDR should be on everyone's mind as the foundation for weathering top-of-funnel downturns.",
+      "ref": "https://openviewpartners.com/blog/what-are-key-performance-indicators-6-saas-metrics-that-really-matter",
+      "tags": ["ndr", "leaky bucket", "retention", "openview"],
+      "verify": true
+    },
+    {
+      "id": "ndr-stripe-benchmark",
+      "title": "NDR median 100–111% by company size (OpenView 2022 via Stripe)",
+      "body": "Per OpenView's 2022 report as summarized by Stripe: median NDR across SaaS companies sits between 100% and 111% depending on size. >100% indicates existing customers grow revenue (upsell/cross-sell working); ~100% stable; <100% a warning.",
+      "ref": "https://stripe.com/resources/more/net-dollar-retention-explained",
+      "tags": ["ndr", "benchmark", "stripe", "openview"],
+      "verify": true
+    },
+    {
+      "id": "negative-net-churn-ndr",
+      "title": "Net-negative churn — the 'holy grail' of SaaS",
+      "body": "Net negative churn exists when expansion + reactivation MRR exceeds churned + contraction MRR, so NDR exceeds 100% without any new logos. ChartMogul calls it the only kind of churn you want — the base self-grows.",
+      "ref": "https://chartmogul.com/resources/saas-metrics-cheat-sheet",
+      "tags": ["ndr", "negative churn", "expansion", "holy grail"],
+      "verify": true
+    },
+    {
+      "id": "ndr-growth-driver",
+      "title": "NDR is the single most powerful SaaS health metric",
+      "body": "Top SaaS companies show 120–150% NRR. NDR demonstrates the product becomes more valuable over time and that growth compounds on an already-growing base — the quality signal investors weight most heavily after growth rate.",
+      "ref": "https://www.clarigital.com/codex/business-strategy/saas-metrics-kpis",
+      "tags": ["ndr", "health", "investor", "expansion"],
+      "verify": true
+    },
+    {
+      "id": "ndr-formula-strict",
+      "title": "Strict NDR formula and edge cases",
+      "body": "NDR = (Starting MRR + Expansion MRR − Contraction MRR − Churned MRR) ÷ Starting MRR. Use the same cohort of customers at start and end of period; exclude new-logo MRR entirely from both numerator and denominator to avoid inflating retention.",
+      "ref": "https://openviewpartners.com/blog/what-are-key-performance-indicators-6-saas-metrics-that-really-matter",
+      "tags": ["ndr", "formula", "cohort", "definition"],
+      "verify": true
+    }
+  ]
+}

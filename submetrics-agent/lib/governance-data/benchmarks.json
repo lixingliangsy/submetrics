@@ -1,0 +1,95 @@
+{
+  "version": "benchmarks@2026-07-24",
+  "standard": "Subscription / SaaS efficiency, valuation & unit-economics benchmarks corpus",
+  "source": "SaaS Capital / Bessemer / KeyBanc / OpenView / ChartMogul references (web-researched 2026-07-24)",
+  "entries": [
+    {
+      "id": "rule-of-40-def",
+      "title": "Rule of 40 — growth rate + profit margin ≥ 40%",
+      "body": "Rule of 40: annual revenue growth rate (%) + profit margin (%) should equal or exceed 40%. A company growing 60% at −20% margin scores 40 (healthy growth-stage); growing 10% at 30% margin also scores 40 (healthy mature). Coined by Brad Feld 2015, popularized by Bessemer.",
+      "ref": "https://www.saascapital.com/research/",
+      "tags": ["rule of 40", "efficiency", "growth", "margin", "definition"],
+      "verify": true
+    },
+    {
+      "id": "rule-of-40-benchmark",
+      "title": "Rule of 40 benchmarks (SaaS Capital Index 2024)",
+      "body": "SaaS Capital Index averaged a Rule of 40 score of 31 in 2024, top quartile above 50. Private growth-stage targets: Seed/Series A 60+, Series B/C 50, Series D+ 40, public 40+. Below 20 signals fundamental issues and multiple compression.",
+      "ref": "https://tool.teamzlab.com/b2b-leadgen/rule-of-40-calculator/",
+      "tags": ["rule of 40", "benchmark", "saas capital", "score"],
+      "verify": true
+    },
+    {
+      "id": "rule-of-x",
+      "title": "Bessemer Rule of X — (Growth × 2) + FCF Margin",
+      "body": "Bessemer's Rule of X weights growth twice: (Growth Rate × 2) + FCF Margin. A 1% growth increase moves a public cloud company's valuation multiple ~2.3× as much as a 1% FCF-margin increase, because growth compounds while margin gains are linear.",
+      "ref": "https://www.bessemerventures.com/state-of-the-cloud/",
+      "tags": ["rule of x", "bessemer", "valuation", "growth"],
+      "verify": true
+    },
+    {
+      "id": "ltv-def",
+      "title": "LTV — Lifetime Value (gross-margin-adjusted)",
+      "body": "Basic LTV = ARPA ÷ monthly churn rate. More precisely, gross-margin-adjusted LTV = (ARPA × gross margin %) ÷ monthly churn rate. Using ARR/churn without margin overstates value; margin-adjusted LTV is the figure that matters for unit economics.",
+      "ref": "https://centsight.com/saas-finance/saas-metrics",
+      "tags": ["ltv", "lifetime value", "definition", "gross margin"],
+      "verify": true
+    },
+    {
+      "id": "ltv-cac",
+      "title": "LTV:CAC ratio — 3:1 healthy, 4:1+ strong",
+      "body": "Median LTV:CAC ~3.6:1; 4:1+ is strong and 6:1+ top-tier (Benchmarkit 2024 / KeyBanc). Below 3:1 the business destroys value on acquisition; LTV:CAC is the counterweight to CAC and the core unit-economics test.",
+      "ref": "https://founderpath.com/blog/saas-financial-model",
+      "tags": ["ltv", "cac", "unit economics", "benchmark"],
+      "verify": true
+    },
+    {
+      "id": "cac-def",
+      "title": "CAC — Customer Acquisition Cost",
+      "body": "CAC = total sales & marketing expense ÷ number of new customers acquired in the same period. Include S&M salaries in the numerator; count only net-new logos (not expansion) in the denominator; account for the lag between spend and close.",
+      "ref": "https://centsight.com/saas-finance/saas-metrics",
+      "tags": ["cac", "definition", "acquisition cost"],
+      "verify": true
+    },
+    {
+      "id": "cac-payback",
+      "title": "CAC payback — 12–18 months healthy, <12 strong",
+      "body": "Healthy B2B SaaS CAC payback is 12–18 months; under 12 months is strong; above 24 months suggests acquisition costs too high or LTV too low. Including expansion revenue in LTV shortens payback significantly (expansion costs ~half of net-new acquisition).",
+      "ref": "https://amworldgroup.com/statistics/recurring-revenue-statistics",
+      "tags": ["cac", "payback", "benchmark", "efficiency"],
+      "verify": true
+    },
+    {
+      "id": "magic-number",
+      "title": "Magic Number — sales efficiency",
+      "body": "Gross Magic Number = net-new ARR (from sales/marketing) in a quarter ÷ prior-quarter S&M spend. ~0.75+ is efficient; KeyBanc 2024 private median ~0.64, expected to reach 0.82 by 2026. Below 0.5 signals inefficient go-to-market.",
+      "ref": "https://saascalchub.com/guides/2026-saas-industry-benchmarks",
+      "tags": ["magic number", "sales efficiency", "keybanc", "benchmark"],
+      "verify": true
+    },
+    {
+      "id": "saas-capital-index",
+      "title": "SaaS Capital Index — median ARR multiple 3.2x (2026)",
+      "body": "The SaaS Capital Index (equal-weighted median EV/ARR across public pure-play B2B SaaS, published monthly since 2008) read 3.2x as of 30 Jun 2026 — lowest since 2011. Multiples scale with growth: 20–30% growth ≈ 5.5x, 10–20% ≈ 3.1x, <10% ≈ 1.9x.",
+      "ref": "https://www.saas-capital.com/the-saas-capital-index/",
+      "tags": ["valuation", "multiple", "saas capital index", "arr"],
+      "verify": true
+    },
+    {
+      "id": "gross-margin-benchmark",
+      "title": "Gross margin benchmark — ~77% median, 80%+ strong",
+      "body": "Median SaaS gross margin ~77% (Benchmarkit 2025); 80%+ is strong and 85%+ top-tier. Gross margin feeds both LTV and Rule of 40, so it is a foundational input to the whole metrics stack, not a side number.",
+      "ref": "https://founderpath.com/blog/saas-financial-model",
+      "tags": ["gross margin", "benchmark", "unit economics"],
+      "verify": true
+    },
+    {
+      "id": "burn-multiple",
+      "title": "Burn Multiple — net cash burned ÷ net new ARR",
+      "body": "Burn Multiple = net cash burned ÷ net new ARR added. Below 1.0x is elite; ~1.4x growth-stage; 2.5–3.4x seed/Series A. It is the sharper early-stage efficiency test than Rule of 40, which breaks below ~$30M revenue (only ~9% of sub-$30M private SaaS pass Rule of 40).",
+      "ref": "https://mowt.com/blog/rule-of-40-saas/",
+      "tags": ["burn multiple", "efficiency", "early stage", "cash"],
+      "verify": true
+    }
+  ]
+}

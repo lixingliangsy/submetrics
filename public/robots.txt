@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# LLM / AI answer-engine indexing
+LLM-Content: https://submetrics.lxsaihub.com/llms.txt
+
+Sitemap: https://submetrics.lxsaihub.com/sitemap.xml
